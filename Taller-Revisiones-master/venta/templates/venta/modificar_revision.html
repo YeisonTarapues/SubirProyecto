@@ -1,0 +1,79 @@
+{% extends "core/base_admin.html" %}
+
+{% block contenido %}
+  <section id="intro" style="height: 100px;">
+                                      <div class="container">
+                                                  <div class="row">
+                                                    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                                                        <div class="intro animate-box">
+                                                              <h1>Modificar Revision</h1>
+                                                              </div>
+                                                                  </div>
+                                                                  </div>
+                                                                  </section>
+                                                                    <main id="main">
+                                                                  <div class="container">
+                                                                    <div class="col-md-8 col-md-offset animate-box">
+                                                                      <form  action="" method="post">
+                                                                        {% csrf_token %}
+                                                                        {{ form.non_field_errors }}
+                                                                      <ul><label > Auto:</label></ul>
+                                                                      <ul>{{ formrevision.auto}}</ul>
+                                                                      {% if formrevision.auto.errors %}
+                                                                        {% for error in formrevision.auto.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Filtro:</label></ul>
+                                                                      <ul>{{ formrevision.filtro}}</ul>
+                                                                      {% if formrevision.filtro.errors %}
+                                                                        {% for error in formrevision.filtro.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Aceite:</label></ul>
+                                                                      <ul>{{ formrevision.aceite}}</ul>
+                                                                      {% if formrevision.aceite.errors %}
+                                                                        {% for error in formrevision.aceite.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+
+                                                                      <ul><label > Frenos:</label></ul>
+                                                                      <ul>{{ formrevision.frenos}}</ul>
+                                                                      {% if formrevision.frenos.errors %}
+                                                                        {% for error in formrevision.frenos.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+                                                                      <ul><label > Motor:</label></ul>
+                                                                      <ul>{{ formrevision.motor}}</ul>
+                                                                      {% if formrevision.motor.errors %}
+                                                                        {% for error in formrevision.motor.errors %}
+                                                                          <small class="error">
+                                                                            {{ error|escape }}
+                                                                          </small>
+                                                                        {% endfor %}
+                                                                      {% endif %}
+                                                                      <div class="container" style="width: 1190px; padding-left: 52px; padding-top: 37px;">
+                                                                        <div class="row">
+                                                                          <input type="submit" name="name" class="btn btn-primary" value="Guardar">
+                                                                             <a href="{% url "lista-autos" %}" class="btn btn-default">Cancelar</a>
+                                                                        </div>
+                                                                      </div>
+                                                                        </form>
+                                                                    </div>
+                                                              </div>
+                                          </div>
+                              </main>
+{% endblock %}
